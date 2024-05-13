@@ -57,5 +57,14 @@ def equipmentRoller() -> list:
     pass
 
 
+def statsRoller() -> dict:
+    # TODO
+    """
+    Function for determining the character's initial stats
+    :return: dict
+    """
+    pass
+
+
 if __name__ == 'main':
     main()
