@@ -47,5 +47,15 @@ def weaponRoller(scrollPresent=False) -> dict:
     """
     pass
 
+
+def equipmentRoller() -> list:
+    # TODO
+    """
+    Function for determining the starting equipment for PCs
+    :return: list
+    """
+    pass
+
+
 if __name__ == 'main':
     main()
