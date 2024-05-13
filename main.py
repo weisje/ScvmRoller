@@ -6,6 +6,7 @@ def main():
 
 
 def traitPicker(traitType):
+    # TODO
     """
     Function for generating different types of traits for characters.  These traits are not mechanically important; just adding roleplay flavor for characters.
     :param traitType:
@@ -13,6 +14,17 @@ def traitPicker(traitType):
     :return: list of str
     """
     pass
+
+
+def scrollPicker(scrollType): # TODO
+    """
+    Function for randomly selecting a scroll from the base Mörk Borg pool of scrolls based on the input
+    :param scrollType: Defines the type of scroll that will be chosen from("UNCLEAN SCROLL" or "SACRED SCROLL")
+    :type scrollType: str
+    :return: str
+    """
+    pass
+
 
 if __name__ == 'main':
     main()
