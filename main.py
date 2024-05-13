@@ -5,5 +5,14 @@ def main():
     print("Success")
 
 
+def traitPicker(traitType):
+    """
+    Function for generating different types of traits for characters.  These traits are not mechanically important; just adding roleplay flavor for characters.
+    :param traitType:
+    :type traitType: str
+    :return: list of str
+    """
+    pass
+
 if __name__ == 'main':
     main()
