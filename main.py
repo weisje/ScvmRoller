@@ -5,7 +5,7 @@ def main():
     print("Success")
 
 
-def traitPicker(traitType):
+def traitPicker(traitType) -> list:
     # TODO
     """
     Function for generating different types of traits for characters.  These traits are not mechanically important; just adding roleplay flavor for characters.
@@ -16,7 +16,7 @@ def traitPicker(traitType):
     pass
 
 
-def scrollPicker(scrollType): # TODO
+def scrollPicker(scrollType) -> str: # TODO
     """
     Function for randomly selecting a scroll from the base Mörk Borg pool of scrolls based on the input
     :param scrollType: Defines the type of scroll that will be chosen from("UNCLEAN SCROLL" or "SACRED SCROLL")
@@ -26,13 +26,24 @@ def scrollPicker(scrollType): # TODO
     pass
 
 
-def armorRoller(scrollPresent=False):
+def armorRoller(scrollPresent=False) -> dict:
     # TODO
     """
     Function for determining the armor that will be given to the character.  If the character has a scroll then they are limited to tier 0 & tier 1 armor.  Otherwise, they will have tier 0 through tier 3 to select.
     :param scrollPresent: States whether the character has been given a scroll during item selection.
     :type scrollPresent: bool
-    :return: str
+    :return: dict
+    """
+    pass
+
+
+def weaponRoller(scrollPresent=False) -> dict:
+    # TODO
+    """
+    Function for determining the weapon that will be given to the character.  If the character has a scroll then they are limited to weapons 0-5.  Otherwise, they will have access to all weapons present.
+    :param scrollPresent: States whether the character has been given a scroll during item selection.
+    :type scrollPresent: bool
+    :return: dict
     """
     pass
 
