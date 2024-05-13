@@ -2,6 +2,7 @@ import os
 import random
 import sys
 
+
 def main():
     """
     The purpose of this program is to randomly generate characters for the TTRPG game "Mörk Borg" by Free League Publishing.  The characters are not from the optional classes; they are completely randomly generated based on the initial character rules.
@@ -71,14 +72,41 @@ def statsRoller() -> dict:
 
 
 def abilityRoller(preferredStat=False) -> int:
-    # TODO
     """
     Function for rolling initial abilities.
     :param preferredStat: Determines if the stat should be rolled with 4d6 drop the lowest(True) or 3d6(False).
     :type preferredStat: bool
     :return: int
     """
-    pass
+    rolls = [] # collection of ints representing the random rolls
+    rollCount = 3 # How many d6s will be rolled for the ability
+
+    while len(rolls) < rollCount:
+        rolls.append(random.randint(1, 6))
+
+    if preferredStat: # If the roll is listed as a preferred stat, then add one more d6 roll
+        rolls.append(random.randint(1,6))
+        for lowest in range(0,1): # drop the lowest roll(lowest value in rolls list)
+            rolls.remove(min(rolls))
+
+    match sum(rolls): # Add the values in the rolls list, then compare result to cases for return int value
+        case 1 | 2 | 3 | 4:
+            return -3
+        case 5 | 6:
+            return -2
+        case 7 | 8:
+            return -1
+        case 9 | 10 | 11 | 12:
+            return 0
+        case 13 | 14:
+            return 1
+        case 15 | 16:
+            return 2
+        case 17 | 18 | 19 | 20:
+            return 3
+        case _:
+            print(f"Number {sum(rolls)} outside range")
+            sys.exit()
 
 
 if __name__ == 'main':
