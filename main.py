@@ -26,5 +26,15 @@ def scrollPicker(scrollType): # TODO
     pass
 
 
+def armorRoller(scrollPresent=False):
+    # TODO
+    """
+    Function for determining the armor that will be given to the character.  If the character has a scroll then they are limited to tier 0 & tier 1 armor.  Otherwise, they will have tier 0 through tier 3 to select.
+    :param scrollPresent: States whether the character has been given a scroll during item selection.
+    :type scrollPresent: bool
+    :return: str
+    """
+    pass
+
 if __name__ == 'main':
     main()
