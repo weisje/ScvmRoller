@@ -60,8 +60,19 @@ def equipmentRoller() -> list:
 def statsRoller() -> dict:
     # TODO
     """
-    Function for determining the character's initial stats
+    Function for determining the character's initial stats. Will also determine two preferred stats randomly.
     :return: dict
+    """
+    pass
+
+
+def abilityRoller(preferredStat=False) -> int:
+    # TODO
+    """
+    Function for rolling initial abilities.
+    :param preferredStat: Determines if the stat should be rolled with 4d6 drop the lowest(True) or 3d6(False).
+    :type preferredStat: bool
+    :return: int
     """
     pass
 
