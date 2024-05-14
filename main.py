@@ -1,3 +1,4 @@
+import csv
 import os
 import random
 import sys
@@ -7,6 +8,7 @@ def main():
     """
     The purpose of this program is to randomly generate characters for the TTRPG game "Mörk Borg" by Free League Publishing.  The characters are not from the optional classes; they are completely randomly generated based on the initial character rules.
     """
+    equipmentRoller()
 
 
 def traitPicker(traitType) -> list:
@@ -58,7 +60,17 @@ def equipmentRoller() -> list:
     Function for determining the starting equipment for PCs
     :return: list
     """
-    pass
+    startingEquipment = [] # list for holding returned equipment
+    startingContainers =[] # list for holding starting containers pulled from outside document
+    with open("documents\\startingContainers.csv", "r") as startingContainersFile:
+        containerReader = csv.reader(startingContainersFile, delimiter="|")
+        next(containerReader)
+        for row in containerReader:
+            startingContainers.append(row)
+
+    print(startingContainers)
+
+    return startingEquipment
 
 
 def statsRoller() -> dict:
