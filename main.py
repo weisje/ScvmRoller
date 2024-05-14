@@ -7,7 +7,6 @@ def main():
     """
     The purpose of this program is to randomly generate characters for the TTRPG game "Mörk Borg" by Free League Publishing.  The characters are not from the optional classes; they are completely randomly generated based on the initial character rules.
     """
-    print("Success")
 
 
 def traitPicker(traitType) -> list:
@@ -63,12 +62,24 @@ def equipmentRoller() -> list:
 
 
 def statsRoller() -> dict:
-    # TODO
     """
-    Function for determining the character's initial stats. Will also determine two preferred stats randomly.
+    Function for determining the character's initial stats. Will also determine two preferred stats randomly. Returns the results as a dict of the abilities.
     :return: dict
     """
-    pass
+    print("Initializing")
+    stats = {"Agility": -4, "Presence": -4, "Strength": -4, "Toughness": -4} # Initially populates the stats with invalid values to generate the dictionary
+    preferredStats = [] # List for holding the preferred stats after they are selected
+    while len(preferredStats) < 2:
+        preferredStatChoice = random.choice(list(stats))
+        if preferredStatChoice not in preferredStats:
+            preferredStats.append(preferredStatChoice) # Check if selected stat is already in preferredStats.  If not append it, if so then try again until the preferredStats list holds two entries.
+
+    for currentStat in stats:
+        if currentStat in preferredStats:
+            stats[currentStat] = abilityRoller(True) # Call abilityRoller() & have it return results of roll 4d6 drop the lowest
+        else:
+            stats[currentStat] = abilityRoller() # Call abilityRoller & have it return results of roll 3d6
+    return stats
 
 
 def abilityRoller(preferredStat=False) -> int:
@@ -109,5 +120,5 @@ def abilityRoller(preferredStat=False) -> int:
             sys.exit()
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     main()
