@@ -61,21 +61,8 @@ def equipmentRoller() -> list:
     :return: list
     """
     startingEquipment = [] # list for holding returned equipment
-    startingContainers =[] # list for holding starting containers pulled from outside document startingContainers.csv
-    startingItems01 = [] # list for holding the starting items pulled from outside document startingItems01.csv
-    with open("documents\\startingContainers.csv", "r") as startingContainersFile:
-        containerReader = csv.reader(startingContainersFile, delimiter="|")
-        next(containerReader)
-        for row in containerReader:
-            startingContainers.append(row)
-    startingContainersFile.close()
-
-    with open("documents\\startingItems01.csv") as startingItems01File:
-        items01Reader = csv.reader(startingItems01File, delimiter="|")
-        next(items01Reader)
-        for row in items01Reader:
-            startingItems01.append(row)
-    startingItems01File.close()
+    startingContainers = csvReader("documents\\startingContainers.csv") # list for holding starting containers pulled from outside document startingContainers.csv
+    startingItems01 = csvReader("documents\\startingItems01.csv") # list for holding the starting items pulled from outside document startingItems01.csv
 
     startingEquipment.append(random.choice(startingContainers))
     startingEquipment.append(random.choice(startingItems01))
@@ -143,16 +130,28 @@ def abilityRoller(preferredStat=False) -> int:
             sys.exit()
 
 
-def csvReader(filePath, delimiterChar='|') -> list:
+def csvReader(filePath, delimiterChar='|', hasHeader=True) -> list:
     """
     Function for reading in designated CSV files, populating contents of rows to a list, then returning a list of lists for said contents
     :param filePath: Document filepath where the csv file is located, including the csv file itself(i.e. "\\documents\\containersFile.csv"
     :type filePath: str
     :param delimiterChar: Character defined as the seperator between columns within the csv file
     :type: char
+    :param hasHeader: Specifies if the csv file has a header included for the information or not.
+    :type hasHeader: bool
     :return: list
     """
-    pass
+    csvContentList = [] # Final list that will be returned to caller
+    with open(filePath, 'r') as csvContentFile:
+        csvReadEngine = csv.reader(csvContentFile, delimiter=delimiterChar)
+        if hasHeader:
+            next(csvReadEngine)
+        for row in csvReadEngine:
+            csvContentList.append(row)
+    csvContentFile.close()
+
+    return csvContentList
+
 
 if __name__ == '__main__':
     main()
