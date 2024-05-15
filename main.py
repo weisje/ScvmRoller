@@ -63,9 +63,11 @@ def equipmentRoller() -> list:
     startingEquipment = [] # list for holding returned equipment
     startingContainers = csvReader("documents\\startingContainers.csv") # list for holding starting containers pulled from outside document startingContainers.csv
     startingItems01 = csvReader("documents\\startingItems01.csv") # list for holding the starting items pulled from outside document startingItems01.csv
+    startingItems02 = csvReader("documents\\startingItems02.csv") # list for holding the starting items pulled from outside document startingItems02.csv
 
     startingEquipment.append(random.choice(startingContainers))
     startingEquipment.append(random.choice(startingItems01))
+    startingEquipment.append(random.choice(startingItems02))
     print(startingEquipment)
 
     return startingEquipment
