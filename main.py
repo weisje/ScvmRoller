@@ -143,5 +143,16 @@ def abilityRoller(preferredStat=False) -> int:
             sys.exit()
 
 
+def csvReader(filePath, delimiterChar='|') -> list:
+    """
+    Function for reading in designated CSV files, populating contents of rows to a list, then returning a list of lists for said contents
+    :param filePath: Document filepath where the csv file is located, including the csv file itself(i.e. "\\documents\\containersFile.csv"
+    :type filePath: str
+    :param delimiterChar: Character defined as the seperator between columns within the csv file
+    :type: char
+    :return: list
+    """
+    pass
+
 if __name__ == '__main__':
     main()
