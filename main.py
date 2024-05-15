@@ -61,14 +61,24 @@ def equipmentRoller() -> list:
     :return: list
     """
     startingEquipment = [] # list for holding returned equipment
-    startingContainers =[] # list for holding starting containers pulled from outside document
+    startingContainers =[] # list for holding starting containers pulled from outside document startingContainers.csv
+    startingItems01 = [] # list for holding the starting items pulled from outside document startingItems01.csv
     with open("documents\\startingContainers.csv", "r") as startingContainersFile:
         containerReader = csv.reader(startingContainersFile, delimiter="|")
         next(containerReader)
         for row in containerReader:
             startingContainers.append(row)
+    startingContainersFile.close()
 
-    print(startingContainers)
+    with open("documents\\startingItems01.csv") as startingItems01File:
+        items01Reader = csv.reader(startingItems01File, delimiter="|")
+        next(items01Reader)
+        for row in containerReader:
+            startingItems01.append(row)
+    startingItems01File.close()
+
+    startingEquipment.append(random.choice(startingContainers))
+    print(startingEquipment)
 
     return startingEquipment
 
