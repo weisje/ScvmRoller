@@ -73,11 +73,12 @@ def equipmentRoller() -> list:
     with open("documents\\startingItems01.csv") as startingItems01File:
         items01Reader = csv.reader(startingItems01File, delimiter="|")
         next(items01Reader)
-        for row in containerReader:
+        for row in items01Reader:
             startingItems01.append(row)
     startingItems01File.close()
 
     startingEquipment.append(random.choice(startingContainers))
+    startingEquipment.append(random.choice(startingItems01))
     print(startingEquipment)
 
     return startingEquipment
