@@ -55,15 +55,14 @@ def weaponRoller(scrollPresent=False) -> dict:
 
 
 def equipmentRoller() -> list:
-    # TODO
     """
     Function for determining the starting equipment for PCs
     :return: list
     """
     startingEquipment = [] # list for holding returned equipment
-    startingContainers = csvReader("documents\\startingContainers.csv") # list for holding starting containers pulled from outside document startingContainers.csv
-    startingItems01 = csvReader("documents\\startingItems01.csv") # list for holding the starting items pulled from outside document startingItems01.csv
-    startingItems02 = csvReader("documents\\startingItems02.csv") # list for holding the starting items pulled from outside document startingItems02.csv
+    startingContainers = csvReader("documents\\equipment\\startingContainers.csv") # list for holding starting containers pulled from outside document startingContainers.csv
+    startingItems01 = csvReader("documents\\equipment\\startingItems01.csv") # list for holding the starting items pulled from outside document startingItems01.csv
+    startingItems02 = csvReader("documents\\equipment\\startingItems02.csv") # list for holding the starting items pulled from outside document startingItems02.csv
 
     startingEquipment.append(random.choice(startingContainers))
     startingEquipment.append(random.choice(startingItems01))
