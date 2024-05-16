@@ -8,7 +8,13 @@ def main():
     """
     The purpose of this program is to randomly generate characters for the TTRPG game "Mörk Borg" by Free League Publishing.  The characters are not from the optional classes; they are completely randomly generated based on the initial character rules.
     """
-    armorRoller(True)
+    startingEquipment = equipmentRoller()
+    startingWeapon = weaponRoller()
+    startingArmor = armorRoller()
+    print(f"Container: {startingEquipment[0][0]}\n"
+          f"Items: {startingEquipment[1][0]}, {startingEquipment[2][0]}\n"
+          f"Weapon: {startingWeapon[0]}\n"
+          f"Armor: {startingArmor[0]}")
 
 
 def traitPicker(traitType) -> list:
@@ -75,7 +81,6 @@ def equipmentRoller() -> list:
     startingEquipment.append(random.choice(startingContainers))
     startingEquipment.append(random.choice(startingItems01))
     startingEquipment.append(random.choice(startingItems02))
-    print(startingEquipment)
 
     return startingEquipment
 
