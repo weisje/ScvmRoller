@@ -8,7 +8,6 @@ def main():
     """
     The purpose of this program is to randomly generate characters for the TTRPG game "Mörk Borg" by Free League Publishing.  The characters are not from the optional classes; they are completely randomly generated based on the initial character rules.
     """
-    equipmentRoller()
 
 
 def traitPicker(traitType) -> list:
@@ -43,15 +42,20 @@ def armorRoller(scrollPresent=False) -> dict:
     pass
 
 
-def weaponRoller(scrollPresent=False) -> dict:
+def weaponRoller(scrollPresent=False) -> list:
     # TODO
     """
     Function for determining the weapon that will be given to the character.  If the character has a scroll then they are limited to weapons 0-5.  Otherwise, they will have access to all weapons present.
     :param scrollPresent: States whether the character has been given a scroll during item selection.
     :type scrollPresent: bool
-    :return: dict
+    :return: list
     """
-    pass
+    startingWeapons = csvReader("documents\\equipment\\weapons.csv")
+    defaultDie = len(startingWeapons)
+    if scrollPresent:
+        defaultDie = 6
+
+    return startingWeapons[random.randint(0, defaultDie-1)]
 
 
 def equipmentRoller() -> list:
