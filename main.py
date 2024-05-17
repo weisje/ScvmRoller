@@ -8,7 +8,7 @@ def main():
     """
     The purpose of this program is to randomly generate characters for the TTRPG game "Mörk Borg" by Free League Publishing.  The characters are not from the optional classes; they are completely randomly generated based on the initial character rules.
     """
-    scrollPicker("UNCLEAN SCROLL")
+    scrollInfo = scrollPicker("SACRED SCROLL")
 
 
 def traitPicker(traitType) -> list:
@@ -22,7 +22,7 @@ def traitPicker(traitType) -> list:
     pass
 
 
-def scrollPicker(scrollType) -> list: # TODO
+def scrollPicker(scrollType) -> list:
     """
     Function for randomly selecting a scroll from the base Mörk Borg pool of scrolls based on the input
     :param scrollType: Defines the type of scroll that will be chosen from("UNCLEAN SCROLL" or "SACRED SCROLL")
@@ -30,9 +30,12 @@ def scrollPicker(scrollType) -> list: # TODO
     :return: list
     """
     uncleanScrolls = csvReader("documents\\equipment\\uncleanScrolls.csv")
+    sacredScrolls = csvReader("documents\\equipment\\sacredScrolls.csv")
 
     if scrollType.upper() == "UNCLEAN SCROLL":
         return random.choice(uncleanScrolls)
+    elif scrollType.upper() == "SACRED SCROLL":
+        return random.choice(sacredScrolls)
     else:
         print(f"\'{scrollType}\' is not a valid scroll type. Viable options: \'UNCLEAN SCROLL\' or \'SACRED SCROLL\'")
         sys.exit()
