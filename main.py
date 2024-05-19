@@ -8,18 +8,32 @@ def main():
     """
     The purpose of this program is to randomly generate characters for the TTRPG game "Mörk Borg" by Free League Publishing.  The characters are not from the optional classes; they are completely randomly generated based on the initial character rules.
     """
-    scrollInfo = scrollPicker("SACRED SCROLL")
+    traitPicker("TERRIBLE TAITS")
+
 
 
 def traitPicker(traitType) -> list:
     # TODO
     """
     Function for generating different types of traits for characters.  These traits are not mechanically important; just adding roleplay flavor for characters.
-    :param traitType:
+    :param traitType: The table that the requested trait should be pulled from.
     :type traitType: str
-    :return: list of str
+    :return: list
     """
-    pass
+    returnTraits = []
+    terribleTraitTable = csvReader("documents\\traits\\terribleTraits.csv")
+
+    match traitType.upper():
+        case "TERRIBLE TRAITS":
+            while len(returnTraits) < 2:
+                traitChoice = random.choice(terribleTraitTable)
+                if traitChoice not in returnTraits:
+                    returnTraits.append(traitChoice[0])
+        case _:
+            print(f"{traitType} is not a valid choice.")
+            sys.exit()
+
+    return returnTraits
 
 
 def scrollPicker(scrollType) -> list:
@@ -39,7 +53,6 @@ def scrollPicker(scrollType) -> list:
     else:
         print(f"\'{scrollType}\' is not a valid scroll type. Viable options: \'UNCLEAN SCROLL\' or \'SACRED SCROLL\'")
         sys.exit()
-
 
 
 def armorRoller(scrollPresent=False) -> list:
