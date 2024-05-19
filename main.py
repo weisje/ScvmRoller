@@ -8,7 +8,7 @@ def main():
     """
     The purpose of this program is to randomly generate characters for the TTRPG game "Mörk Borg" by Free League Publishing.  The characters are not from the optional classes; they are completely randomly generated based on the initial character rules.
     """
-    print(traitPicker("BAD HABIT"))
+    print(traitPicker("TROUBLING TALES"))
 
 
 
@@ -24,7 +24,7 @@ def traitPicker(traitType) -> list:
     terribleTraitTable = csvReader("documents\\traits\\terribleTraits.csv")
     brokenBodyTable = csvReader("documents\\traits\\brokenBody.csv")
     badHabitTable = csvReader("documents\\traits\\badHabits.csv")
-    troublingTalesTable = []
+    troublingTalesTable = csvReader("documents\\traits\\troublingTales.csv")
 
     match traitType.upper():
         case "TERRIBLE TRAITS":
