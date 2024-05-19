@@ -23,6 +23,7 @@ def traitPicker(traitType) -> list:
     returnTraits = []
     terribleTraitTable = csvReader("documents\\traits\\terribleTraits.csv")
     brokenBodyTable = csvReader("documents\\traits\\brokenBody.csv")
+    badHabitTable = []
 
     match traitType.upper():
         case "TERRIBLE TRAITS":
@@ -32,6 +33,9 @@ def traitPicker(traitType) -> list:
                     returnTraits.append(traitChoice[0])
         case "BROKEN BODY":
             traitChoice = random.choice(brokenBodyTable)
+            returnTraits.append(traitChoice[0])
+        case "BAD HABIT":
+            traitChoice = random.choice(badHabitTable)
             returnTraits.append(traitChoice[0])
         case _:
             print(f"{traitType} is not a valid choice.")
