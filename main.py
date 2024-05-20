@@ -11,11 +11,30 @@ def main():
     charStats = statsRoller()
     hitPoints = 1
     startingEquipment = equipmentRoller()
-    os.system('cls')
+    startingScrolls = []
+    startingWeapon = ""
+    startingArmor = ""
+
     if startingEquipment[1][0] == "Unclean Scroll":
-        print("SCROLL 01")
+        startingScrolls.append(scrollPicker("UNCLEAN SCROLL"))
     if startingEquipment[2][0] == "Sacred Scroll":
-        print("SCROLL 02")
+        startingScrolls.append(scrollPicker("SACRED SCROLL"))
+    if len(startingScrolls) < 1:
+        startingWeapon = weaponRoller()
+        startingArmor = armorRoller()
+    else:
+        startingWeapon = weaponRoller(True)
+        startingArmor = armorRoller(True)
+
+    hitPointRoll = random.randint(1,8) + charStats["Toughness"]
+    if hitPointRoll > 0:
+        hitPoints = hitPointRoll
+
+    os.system('cls')
+    print(hitPoints)
+    print(startingScrolls)
+    print(startingWeapon)
+    print(startingArmor)
 
 
 def namePicker() -> str:
@@ -135,7 +154,6 @@ def statsRoller() -> dict:
     Function for determining the character's initial stats. Will also determine two preferred stats randomly. Returns the results as a dict of the abilities.
     :return: dict
     """
-    print("Initializing")
     stats = {"Agility": -4, "Presence": -4, "Strength": -4, "Toughness": -4} # Initially populates the stats with invalid values to generate the dictionary
     preferredStats = [] # List for holding the preferred stats after they are selected
     while len(preferredStats) < 2:
