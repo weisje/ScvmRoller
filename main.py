@@ -11,9 +11,7 @@ def main():
     print(traitPicker("TROUBLING TALES"))
 
 
-
 def traitPicker(traitType) -> list:
-    # TODO
     """
     Function for generating different types of traits for characters.  These traits are not mechanically important; just adding roleplay flavor for characters.
     :param traitType: The table that the requested trait should be pulled from.
