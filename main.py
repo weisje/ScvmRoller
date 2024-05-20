@@ -30,9 +30,13 @@ def main():
     if hitPointRoll > 0:
         hitPoints = hitPointRoll
 
+    terribleTraits = traitPicker("TERRIBLE TRAITS")
+    brokenBody = traitPicker("BROKEN BODY")
+    badHabit = traitPicker("BAD HABIT")
+    troublingTales = traitPicker("TROUBLING TALES")
+
     os.system('cls')
     print(hitPoints)
-    print(startingScrolls)
     print(startingWeapon)
     print(startingArmor)
 
