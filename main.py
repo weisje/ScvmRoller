@@ -36,10 +36,34 @@ def main():
     troublingTales = traitPicker("TROUBLING TALES")
 
     os.system('cls')
-    print(hitPoints)
-    print(startingWeapon)
-    print(startingArmor)
 
+    # Character Stat Display
+    print(f"NAME:\t{namePicker()}")
+    print(f"\nHP: {hitPoints}")
+    print("\nSTATS:")
+    for stat in charStats:
+        print(f"\t{stat}: {charStats[stat]}")
+    print("\nITEMS:")
+    for i in range(3):
+        printCase = ""
+        match i:
+            case 0:
+                printCase = f"{startingEquipment[0][0]}"
+                if startingEquipment[0][1]:
+                    printCase += f": {startingEquipment[0][1]}"
+            case 1:
+                printCase = f"{startingEquipment[1][0]}"
+                if startingEquipment[1][1]:
+                    printCase += f": {startingEquipment[1][1]}"
+                if startingEquipment[1][2]:
+                    printCase += f" ({startingEquipment[1][2]})"
+            case 2:
+                printCase = f"{startingEquipment[2][0]}"
+                if startingEquipment[2][1]:
+                    printCase += f": {startingEquipment[2][1]}"
+                if startingEquipment[2][2]:
+                    printCase += f" ({startingEquipment[2][2]})"
+        print(printCase)
 
 def namePicker() -> str:
     """
