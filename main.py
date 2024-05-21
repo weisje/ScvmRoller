@@ -48,17 +48,17 @@ def main():
         printCase = ""
         match i:
             case 0:
-                printCase = f"{startingEquipment[0][0]}"
+                printCase = f"\t{startingEquipment[0][0]}"
                 if startingEquipment[0][1]:
                     printCase += f": {startingEquipment[0][1]}"
             case 1:
-                printCase = f"{startingEquipment[1][0]}"
+                printCase = f"\t{startingEquipment[1][0]}"
                 if startingEquipment[1][1]:
                     printCase += f": {startingEquipment[1][1]}"
                 if startingEquipment[1][2]:
                     printCase += f" ({startingEquipment[1][2]})"
             case 2:
-                printCase = f"{startingEquipment[2][0]}"
+                printCase = f"\t{startingEquipment[2][0]}"
                 if startingEquipment[2][1]:
                     printCase += f": {startingEquipment[2][1]}"
                 if startingEquipment[2][2]:
