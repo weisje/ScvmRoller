@@ -87,8 +87,10 @@ def main():
         armorStatPrint += f"\n\t\t-MECHANICS: {startingArmor[3]}"
     if startingArmor[4]:
         armorStatPrint += f"\n\t\t-EXAMPLES: {startingArmor[4]}"
-
     print(armorStatPrint)
+
+    print("\nTRAITS:")
+    print(f"\t{terribleTraits[0]}. {terribleTraits[1]}. {brokenBody[0]}. {badHabit[0]}. {troublingTales[0]}.")
 
 
 def namePicker() -> str:
