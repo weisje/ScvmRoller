@@ -44,9 +44,9 @@ def main():
     for stat in charStats:
         print(f"\t{stat}: {charStats[stat]}")
     print("\nITEMS:")
-    for i in range(3):
+    for itemSection in range(len(startingEquipment)):
         printCase = ""
-        match i:
+        match itemSection:
             case 0:
                 printCase = f"\t{startingEquipment[0][0]}"
                 if startingEquipment[0][1]:
@@ -64,6 +64,14 @@ def main():
                 if startingEquipment[2][2]:
                     printCase += f" ({startingEquipment[2][2]})"
         print(printCase)
+
+    print(f"\nWEAPON:")
+    weaponStatPrint = f"\t{startingWeapon[0]}\n\t\t-DAMAGE: {startingWeapon[1]}"
+    if startingWeapon[2]:
+        weaponStatPrint += f"\n\t\t-AMMO: {startingWeapon[2]}"
+
+    print(weaponStatPrint)
+
 
 def namePicker() -> str:
     """
