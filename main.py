@@ -54,16 +54,23 @@ def main():
             case 1:
                 printCase = f"\t{startingEquipment[1][0]}"
                 if startingEquipment[1][1]:
-                    printCase += f": {startingEquipment[1][1]}"
+                    if startingEquipment[1][0] != "Unclean Scroll":
+                        printCase += f": {startingEquipment[1][1]}"
                 if startingEquipment[1][2]:
                     printCase += f" ({startingEquipment[1][2]})"
             case 2:
                 printCase = f"\t{startingEquipment[2][0]}"
                 if startingEquipment[2][1]:
-                    printCase += f": {startingEquipment[2][1]}"
+                    if startingEquipment[2][0] != "Sacred Scroll":
+                        printCase += f": {startingEquipment[2][1]}"
                 if startingEquipment[2][2]:
                     printCase += f" ({startingEquipment[2][2]})"
         print(printCase)
+
+    if startingScrolls:
+        print(f"\nSCROLLS:")
+        for scroll in startingScrolls:
+            print(f"\t{scroll[0]}: {scroll[1]}")
 
     print(f"\nWEAPON:")
     weaponStatPrint = f"\t{startingWeapon[0]}\n\t\t-DAMAGE: {startingWeapon[1]}"
