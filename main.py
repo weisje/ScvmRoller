@@ -14,6 +14,7 @@ def main():
     startingScrolls = []
     startingWeapon = ""
     startingArmor = ""
+    startingSilver = random.randint(1,6) + random.randint(1,6) * 10
 
     if startingEquipment[1][0] == "Unclean Scroll":
         startingScrolls.append(scrollPicker("UNCLEAN SCROLL"))
@@ -43,9 +44,9 @@ def main():
     print("\nSTATS:")
     for stat in charStats:
         print(f"\t{stat}: {charStats[stat]}")
-    print("\nITEMS:")
+    print(f"\nITEMS:\n\tSilver: {startingSilver}\n\tWater Skin\n\tFood: {random.randint(1, 4)} days worth")
+    printCase = ""
     for itemSection in range(len(startingEquipment)):
-        printCase = ""
         match itemSection:
             case 0:
                 printCase = f"\t{startingEquipment[0][0]}"
