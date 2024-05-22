@@ -54,14 +54,14 @@ def main():
             case 1:
                 printCase = f"\t{startingEquipment[1][0]}"
                 if startingEquipment[1][1]:
-                    if startingEquipment[1][0] != "Unclean Scroll":
+                    if startingEquipment[1][0] != "Unclean Scroll": # Check to see if a scroll is selected.  If so don't print the description ("Randomly Selected")
                         printCase += f": {startingEquipment[1][1]}"
                 if startingEquipment[1][2]:
                     printCase += f" ({startingEquipment[1][2]})"
             case 2:
                 printCase = f"\t{startingEquipment[2][0]}"
                 if startingEquipment[2][1]:
-                    if startingEquipment[2][0] != "Sacred Scroll":
+                    if startingEquipment[2][0] != "Sacred Scroll": # Check to see if a scroll is selected.  If so don't print the description ("Randomly Selected")
                         printCase += f": {startingEquipment[2][1]}"
                 if startingEquipment[2][2]:
                     printCase += f" ({startingEquipment[2][2]})"
@@ -76,8 +76,18 @@ def main():
     weaponStatPrint = f"\t{startingWeapon[0]}\n\t\t-DAMAGE: {startingWeapon[1]}"
     if startingWeapon[2]:
         weaponStatPrint += f"\n\t\t-AMMO: {startingWeapon[2]}"
-
     print(weaponStatPrint)
+
+    print(f"\nARMOR:")
+    armorStatPrint = f"\t{startingArmor[0]}\n\t\t-{startingArmor[1].upper()}"
+    if startingArmor[2]:
+        armorStatPrint += f"\n\t\t-DAMAGE REDUCTION: {startingArmor[2]}"
+    if startingArmor[3]:
+        armorStatPrint += f"\n\t\t-MECHANICS: {startingArmor[3]}"
+    if startingArmor[4]:
+        armorStatPrint += f"\n\t\t-EXAMPLES: {startingArmor[4]}"
+
+    print(armorStatPrint)
 
 
 def namePicker() -> str:
