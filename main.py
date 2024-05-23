@@ -80,7 +80,7 @@ def main():
     print(weaponStatPrint)
 
     print(f"\nARMOR:")
-    armorStatPrint = f"\t{startingArmor[0]}\n\t\t-{startingArmor[1].upper()}"
+    armorStatPrint = f"\t{startingArmor[0]}\n\t\t-TIER: {startingArmor[1]}"
     if startingArmor[2]:
         armorStatPrint += f"\n\t\t-DAMAGE REDUCTION: {startingArmor[2]}"
     if startingArmor[3]:

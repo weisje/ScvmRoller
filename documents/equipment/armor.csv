@@ -1,5 +1,5 @@
 ArmorName|ArmorTier|DamageReduction|Mechanics|Examples
-No Armor|Tier 0|||
-Light Armor|Tier 1|-d2||Fur, Padded Cloth, Leather, etc.
-Medium Armor|Tier 2|-d4|DR+2 on Agility tests including Defense|Scale, Chainmail, etc.
-Heavy Armor|Tier 3|-d6|DR+4 on Agility tests.  Defense is DR+2|Splint, Plate, etc.
+No Armor|0|||
+Light Armor|1|-d2||Fur, Padded Cloth, Leather, etc.
+Medium Armor|2|-d4|DR+2 on Agility tests including Defense|Scale, Chainmail, etc.
+Heavy Armor|3|-d6|DR+4 on Agility tests.  Defense is DR+2|Splint, Plate, etc.
